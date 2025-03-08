@@ -22,18 +22,70 @@ function animm(elm) {
 
 function R(min,max) { return min+Math.random() * (max-min) };
 
-
 /* https://mattboldt.com/typed.js/ */
-var typed = new Typed('#text', {
-    strings: ['Желаю весеннего настроения, пусть на душе всегда будет светло и радостно. Желаю, чтобы на лице всегда сияла улыбка, пусть жизнь будет щедра на подарки. В самый женский день года желаю простого женского счастья и здоровья.'],
-    startDelay: 3000,
-    typeSpeed: 50,
-    backSpeed: 0,
-    fadeOut: true,
-    loop: false,
-    showCursor: false,
-    onComplete: function() {
-        var author = document.getElementById("author");
-        author.style.opacity = 1;
-    }
-});
+setTimeout(() => {
+    var typed = new Typed('#text', {
+        strings: ['💖 Моя дорогая Марго! 💖 С 8 Марта, моя прекрасная, нежная и удивительная девушка! 🌸✨ Хоть между нами километры, наша любовь сильнее любых расстояний. Мы встретились в игре, но теперь ты – моя самая настоящая реальность. 💕 Ты согреваешь мою душу, наполняешь сердце радостью и даришь мне вдохновение каждый день.'],
+        typeSpeed: 50,
+        backSpeed: 0,
+        fadeOut: true,
+        loop: false,
+        showCursor: false,
+        onComplete: function() {
+            var author = document.getElementById("author");
+            author.style.opacity = 1;
+            showFirstButton();
+        }
+    });
+}, 3000);
+
+function showFirstButton() {
+    var button1 = document.createElement("button");
+    button1.innerText = "Тикни на меня!";
+    button1.id = "changeTextBtn1";
+    button1.style.display = "block";
+    button1.style.margin = "20px auto";
+    button1.onclick = function() {
+        button1.remove();
+        changeTextSecond();
+    };
+    document.querySelector(".card").appendChild(button1);
+}
+
+function changeTextSecond() {
+    var typed = new Typed('#text', {
+        strings: ['Ты – самое прекрасное, что случилось со мной. Я мечтаю о том моменте, когда смогу обнять тебя по-настоящему, почувствовать тепло твоих рук и заглянуть в твои глаза без экрана между нами. Но даже сейчас я чувствую тебя рядом, в каждом сообщении, в каждом звонке, в каждом сердечке, что ты мне отправляешь.'],
+        typeSpeed: 50,
+        backSpeed: 0,
+        fadeOut: true,
+        loop: false,
+        showCursor: false,
+        onComplete: function() {
+            showSecondButton();
+        }
+    });
+}
+
+function showSecondButton() {
+    var button2 = document.createElement("button");
+    button2.innerText = "Клац!";
+    button2.id = "changeTextBtn2";
+    button2.style.display = "block";
+    button2.style.margin = "20px auto";
+    button2.onclick = function() {
+        button2.remove();
+        changeTextThird();
+    };
+    document.querySelector(".card").appendChild(button2);
+}
+
+function changeTextThird() {
+    var typed = new Typed('#text', {
+        strings: ['Пусть этот день принесёт тебе радость, улыбки и ощущение, что ты самая любимая и желанная! Пусть мечты сбываются, и пусть наша история будет иметь самое счастливое продолжение. Я верю, что мы обязательно встретимся, и это будет самый лучший день в моей жизни. Люблю тебя безумно, моя Марго! 💖🎮🌷'],
+        typeSpeed: 50,
+        backSpeed: 0,
+        fadeOut: true,
+        loop: false,
+        showCursor: false
+    });
+}
