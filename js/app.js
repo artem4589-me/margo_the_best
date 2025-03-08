@@ -7,7 +7,7 @@ var warp = document.getElementById("petals"),
     w = window.innerWidth,
     h = window.innerHeight;
 
-for (i = 0; i < total; i++) {
+for (var i = 0; i < total; i++) {
     var Div = document.createElement('div');
     TweenLite.set(Div, { attr: { class: 'dot' }, x: R(0, w), y: R(-200, -150), z: R(-200, 200) });
     warp.appendChild(Div);
@@ -20,14 +20,14 @@ function animm(elm) {
     TweenMax.to(elm, R(2, 8), { rotationX: R(0, 360), rotationY: R(0, 360), repeat: -1, yoyo: true, ease: Sine.easeInOut, delay: -5 });
 };
 
-function R(min, max) { return min + Math.random() * (max - min); }
+function R(min, max) { return min + Math.random() * (max - min) };
 
 /* https://mattboldt.com/typed.js/ */
-let musicStarted = false; // Флаг, чтобы запустить музыку только один раз
+let musicStarted = false; // Флаг для запуска музыки
+
 document.body.addEventListener('click', (event) => {
     changeText(event);
 
-    // Если музыка ещё не начала играть
     if (!musicStarted) {
         const audio = document.getElementById('background-music');
         if (audio) {
@@ -41,7 +41,6 @@ document.body.addEventListener('click', (event) => {
     }
 });
 
-// Функция смены текста
 setTimeout(() => {
     var typed = new Typed('#text', {
         strings: ['💖 Моя дорогая Марго! 💖 С 8 Марта, моя прекрасная, нежная и удивительная девушка! 🌸✨ Хоть между нами километры, наша любовь сильнее любых расстояний. Мы встретились в игре, но теперь ты – моя самая настоящая реальность. 💕 Ты согреваешь мою душу, наполняешь сердце радостью и даришь мне вдохновение каждый день.'],
@@ -50,7 +49,7 @@ setTimeout(() => {
         fadeOut: true,
         loop: false,
         showCursor: false,
-        onComplete: function () {
+        onComplete: function() {
             var author = document.getElementById("author");
             author.style.opacity = 1;
             showFirstButton();
@@ -64,7 +63,7 @@ function showFirstButton() {
     button1.id = "changeTextBtn1";
     button1.style.display = "block";
     button1.style.margin = "20px auto";
-    button1.onclick = function () {
+    button1.onclick = function() {
         button1.remove();
         changeTextSecond();
     };
@@ -79,7 +78,7 @@ function changeTextSecond() {
         fadeOut: true,
         loop: false,
         showCursor: false,
-        onComplete: function () {
+        onComplete: function() {
             showSecondButton();
         }
     });
@@ -91,7 +90,7 @@ function showSecondButton() {
     button2.id = "changeTextBtn2";
     button2.style.display = "block";
     button2.style.margin = "20px auto";
-    button2.onclick = function () {
+    button2.onclick = function() {
         button2.remove();
         changeTextThird();
     };
