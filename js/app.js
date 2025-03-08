@@ -90,21 +90,15 @@ function changeTextThird() {
     });
 }
 
-// Включаем музыку при клике по экрану
-let musicStarted = false;
-document.body.addEventListener('click', (event) => {
-    changeText(event);
-
-    if (!musicStarted) {
-        const audio = document.getElementById('background-music');
-        if (audio) {
-            audio.play().catch(error => {
-                console.log("Safari блокирует автозапуск музыки. Включаем при клике.");
-            });
-            musicStarted = true;
-        } else {
-            console.error("Файл вокзал.mp3 не найден.");
-        }
+// Включаем музыку сразу при загрузке страницы
+window.addEventListener('load', () => {
+    const audio = document.getElementById('background-music');
+    if (audio) {
+        audio.play().catch(error => {
+            console.log("Safari блокирует автозапуск музыки. Включаем при клике.");
+        });
+    } else {
+        console.error("Файл вокзал.mp3 не найден.");
     }
 });
 
