@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
-	<link rel="manifest" href="img/favicons/site.webmanifest">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
-	<title>Любимая, с 8 марта!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="img/favicons/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>Любимая, с 8 марта!</title>
 </head>
 <body>
 
-	<!-- Контейнер для лепестков -->
-	<div id="petals"></div>
+    <div id="petals"></div>
 
-	<!-- Основная карточка с текстом -->
-	<div class="card">
-		<div class="title">Зайка, с 8 марта!</div>
-		<div class="text" id="text"></div>
-		<div class="author" id="author">- Дмитрий Рейдж</div>
-	</div>
+    <div class="card">
+        <div class="title">Зайка, с 8 марта!</div>
+        <div class="text" id="text"></div>
+        <div class="author" id="author">- Дмитрий Рейдж</div>
+    </div>
 
-	<!-- Аудиоплеер для фоновой музыки -->
-	<audio id="bg-music" autoplay loop>
-		<source src="img/vokzal.mp3" type="audio/mpeg">
-		Ваш браузер не поддерживает аудиоэлемент.
-	</audio>
+    <!-- Добавление кнопки для воспроизведения музыки -->
+    <div id="audio-prompt" style="display: none;">
+        <button id="playAudioBtn">Кликните для воспроизведения музыки</button>
+    </div>
 
-	<!-- Подключение скриптов -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-	<script src="js/typed.min.js"></script>
-	<script src="js/app.js"></script>
+    <!-- Аудио элемент -->
+    <audio id="bg-music" autoplay loop muted>
+        <source src="img/vokzal.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудиоэлемент.
+    </audio>
+
+    <button id="changeTextBtn" style="display: none;">Сменить текст</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="js/typed.min.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
 </html>
