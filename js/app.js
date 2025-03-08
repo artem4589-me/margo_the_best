@@ -115,6 +115,10 @@ document.getElementById('playMusicBtn').addEventListener('click', () => {
         audio.play().catch(error => {
             console.log("Ошибка при воспроизведении музыки.");
         });
+
+        // Удаляем кнопку после нажатия
+        const playMusicBtn = document.getElementById('playMusicBtn');
+        playMusicBtn.remove(); // Удаляем кнопку из DOM
     } else {
         console.error("Аудиофайл не найден.");
     }
